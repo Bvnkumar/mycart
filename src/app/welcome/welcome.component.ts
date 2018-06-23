@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppGlobals } from '../app.global';
 import { Router, ActivatedRoute } from '@angular/router';
-
+import {MobItemsService} from '../mob-items.service';
+import  {HttpClient} from  '@angular/common/http';
 
 @Component({
   selector: 'app-welcome',
@@ -13,13 +14,25 @@ export class WelcomeComponent implements OnInit {
   cartCount = [];
   productList;
   param;
-  constructor(public appglobal: AppGlobals, public route: Router, private router: ActivatedRoute) {
+  mobiles;
+  constructor(public appglobal: AppGlobals, public route: Router, private router: ActivatedRoute,
+    public getmobiles:MobItemsService,public http:HttpClient) {
     this.productList = this.appglobal.productList;
     this.router.params.subscribe(params => params.id ? this.param = params.id : "");
+    //New code on 23-06-2018
+    this.http.get('http://localhost:8080/getitems').subscribe(data=>{
+  this.productList=   data;
+  console.log("this.mobiles component", this.productList);
+});
+    
   }
 
   ngOnInit() {
     this.cartCount = this.appglobal.cartProduts;
+    //this.mobiles=this.getmobiles.getMobiles();
+    //console.log("this.mobiles", this.mobiles);
+    //console.log("this.getmobiles.getgetMobiles", this.getmobiles.getMobiles;
+
   }
   addCart(id) {
     if( this.appglobal.cartProduts.lastIndexOf(id)<=-1){

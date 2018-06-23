@@ -16,6 +16,7 @@ import {carousel} from './carousel/carousel.component';
 import {SideBar} from  './sidebar/sidebar.component'
 import {RatingBar} from  './rating/rating.component';
 import {FeedBack} from './feedback/feedback.component';
+import {HttpClientModule} from '@angular/common/http'
 const routes:Routes=[
   {path:'welcome',component:WelcomeComponent},{path:'welcome/:id',component:WelcomeComponent},{
     path:'login',component:loginComponent },
@@ -25,7 +26,7 @@ const routes:Routes=[
     {path:'feedback/:id',component:FeedBack}
 ]
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,RouterModule.forRoot(routes),ReactiveFormsModule
+  imports:      [ BrowserModule, FormsModule,RouterModule.forRoot(routes),ReactiveFormsModule,HttpClientModule
  ],
   declarations: [ AppComponent, HelloComponent,loginComponent,WelcomeComponent ,CartComponent,SuccessComponent,TotalAmont,carousel,SideBar,RatingBar,FeedBack],
   providers:[AppGlobals],
