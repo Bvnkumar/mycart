@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var mysql=require('mysql');
+ passport = require('passport'),
+  FacebookStrategy = require('passport-facebook').Strategy;
 var app=express();
 pool=mysql.createPool({
 host:'127.0.0.1',
@@ -18,18 +20,19 @@ database:'tmobile'
 
 pool.query('select * from tmobile_items',function(err,result){
   if(result){
-    console.log("Connected successfully",result)
+    console.log("Connected successfully")
   }else{
     console.log("Connection failed")
   }
 })
 
-var app = express();
+//var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
+app.use(passport.initialize());
+app.use(passport.session());
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -47,6 +50,9 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
+
 
 // error handlers
 
