@@ -10,7 +10,7 @@ import  {HttpClient} from  '@angular/common/http';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  //Need to get the data using service concept then remove this array
+  //Need to get the data using serv/ice concept then remove this array
   cartCount = [];
   productList;
   param;
@@ -20,7 +20,7 @@ export class WelcomeComponent implements OnInit {
     this.productList = this.appglobal.productList;
     this.router.params.subscribe(params => params.id ? this.param = params.id : "");
     //New code on 23-06-2018
-    this.http.get('http://localhost:8080/getitems').subscribe(data=>{
+    this.http.get('/api/getitems').subscribe(data=>{
   this.productList=   data;
   console.log("this.mobiles component", this.productList);
 });
