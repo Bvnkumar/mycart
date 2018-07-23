@@ -21,8 +21,8 @@
           </div>
           <div class="row">
             <h4 class=" col-xs-offset-4 col-xs-6 col-md-offset-4 col-md-6 ">
-							<strong> {{product.name}}</strong>
-						</h4>
+              <strong> {{product.name}}</strong>
+            </h4>
             <p class="col-lg-12 col-xs-12" style="height:70%;position:relative;">Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
           </div>
           <div class="row">
@@ -30,8 +30,9 @@
               <span class="">{{product.price|currency}}</span>
             </div>
             <div class="col-md-4 col-xs-7">
-              <!-- Need to remove this comment once fix the rating issue -->
-              <rating></rating>
+              <div appRating>
+                <span *ngFor='let in of stars;let i=index;' style="display: inline"  class="glyphicon glyphicon-star"  [ngClass]="{'greenC':i<product.rating}" ></span>
+              </div>
             </div>
             <div class="col-md-4  col-md-offset-0 col-xs-offset-1 col-xs-3" [ngStyle]="{'text-algin':'right'}" style="text-align:right;">
               <a class="btn btn-success" (click)="addCart(product.id)" style="margin-left:15px;"> Add Cart</a>

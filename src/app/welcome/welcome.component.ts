@@ -15,6 +15,7 @@ export class WelcomeComponent implements OnInit {
   productList;
   param;
   mobiles;
+  stars=[1,2,3,4,5]
   constructor(public appglobal: AppGlobals, public route: Router, private router: ActivatedRoute,
     public getmobiles:MobItemsService,public http:HttpClient) {
     this.productList = this.appglobal.productList;
