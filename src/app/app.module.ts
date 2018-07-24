@@ -17,19 +17,21 @@ import {SideBar} from  './sidebar/sidebar.component'
 import {RatingBar} from  './rating/rating.component';
 import {FeedBack} from './feedback/feedback.component';
 import {HttpClientModule} from '@angular/common/http';
-import { RatingDirective } from './rating.directive'
+import { RatingDirective } from './rating.directive';
+import { SignupComponent } from './signup/signup.component'
 const routes:Routes=[
   {path:'welcome',component:WelcomeComponent},{path:'welcome/:id',component:WelcomeComponent},{
     path:'login',component:loginComponent },
     {path:'',redirectTo:'/welcome',pathMatch: 'full'},
     {path:'cart',component:CartComponent},
     {path:'success',component:SuccessComponent},
-    {path:'feedback/:id',component:FeedBack}
+    {path:'feedback/:id',component:FeedBack},
+    {path:'signup',component:SignupComponent}
 ]
 @NgModule({
   imports:      [ BrowserModule, FormsModule,RouterModule.forRoot(routes),ReactiveFormsModule,HttpClientModule
  ],
-  declarations: [ AppComponent, HelloComponent,loginComponent,WelcomeComponent ,CartComponent,SuccessComponent,TotalAmont,carousel,SideBar,RatingBar,FeedBack, RatingDirective],
+  declarations: [ AppComponent, HelloComponent,loginComponent,WelcomeComponent ,CartComponent,SuccessComponent,TotalAmont,carousel,SideBar,RatingBar,FeedBack, RatingDirective, SignupComponent],
   providers:[AppGlobals],
   bootstrap:    [ AppComponent ]
 })

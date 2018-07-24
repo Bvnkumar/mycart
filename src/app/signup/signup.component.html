@@ -1,0 +1,38 @@
+<div class="main-div">
+<div id="signup" class="col-md-4 col-md-offset-4" style="margin-top:50px;">
+	<div class="panel panel-default">
+		<div class="panel-heading" [ngClass]="{'pane-header':true}">Welcome to MyCart</div>
+		<div class="panel-body">
+			<form>
+				<div class="form-group">
+					<label for="username">Username:</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="email">Email:</label>
+					<input type="email" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="password">Password:</label>
+					<input type="password" class="form-control">
+				</div>
+				<div class="btn-block">
+					<button type="submit" title="Submit" class="btn btn-md col-md-offset-1" [ngClass]="{'signup-submit':true,'common-header-style':true}">
+ <span class="glyphicon glyphicon-lock"></span>Sign In</button>
+ <button type="submit" title="Login" class="btn btn-md col-md-offset-5" [ngClass]="{'signup-submit':true,'common-header-style':true}" routerLink='/login'>
+ <span class="glyphicon glyphicon-lock"></span>Login</button>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+	<div style="margin-top: 20px;
+    position: relative;
+    text-align: center;background-color: cornflowerblue;">
+		<div style="
+    display: inline-block;
+    padding: 0 5px;font-size: 20px">or</div>
+	</div>
+  <button class="btn col-md-offset-4" [ngClass]="{'fb-btn':true}" style="margin-top: 20px;">signin with facebook</button>
+</div>
+</div>

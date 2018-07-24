@@ -1,0 +1,23 @@
+.pane-header{
+      text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+}
+.signup-submit{
+  border-radius: 9px;
+  background-color: cornflowerblue
+}
+
+.common-header-style{
+  font-weight: bold;
+  color: white;
+}
+.fb-btn{
+  background-color: #3B5998;
+    color: white;
+}
+.main-div{
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/1200px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg) !important;
+background-repeat: no-repeat;
+}
